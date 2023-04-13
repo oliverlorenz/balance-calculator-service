@@ -1,0 +1,23 @@
+{
+  "name": "discord-event-scheduler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docker:build": "docker build -t ghcr.io/oliverlorenz/discord-event-scheduler:latest -f Dockerfile .",
+    "docker:login": "cat .dockerlogin | docker login ghcr.io -u oliverlorenz --password-stdin",
+    "docker:release": "docker push ghcr.io/oliverlorenz/discord-event-scheduler:latest",
+    "docker:release:production": "docker tag ghcr.io/oliverlorenz/discord-event-scheduler:latest ghcr.io/oliverlorenz/discord-event-scheduler:production && docker push ghcr.io/oliverlorenz/balance-calculator-service:production"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.9.0",
+    "dotenv": "^16.0.3",
+    "moment": "^2.29.4",
+    "ts-dotenv": "^0.9.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.3"
+  }
+}
